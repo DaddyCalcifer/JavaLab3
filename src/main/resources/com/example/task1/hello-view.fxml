@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" prefHeight="409.0" prefWidth="664.0" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.task1.HelloController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+   <Canvas fx:id="canvas" height="287.0" onMouseClicked="#onMouseClicked" width="639.0" />
+   <HBox prefHeight="100.0" prefWidth="200.0">
+      <children>
+         <Label contentDisplay="CENTER" prefHeight="25.0" prefWidth="57.0" text="Фигура:" textAlignment="CENTER" />
+         <TextField fx:id="sides_input" prefHeight="25.0" prefWidth="111.0" />
+         <ColorPicker fx:id="colorPicker" prefHeight="26.0" prefWidth="88.0" />
+         <ColorPicker fx:id="outlineColor" prefHeight="26.0" prefWidth="90.0" />
+         <Label prefHeight="32.0" prefWidth="46.0" text="Ширина" />
+         <TextField fx:id="widthInput" prefHeight="26.0" prefWidth="59.0" text="100" />
+         <Label layoutX="332.0" layoutY="10.0" prefHeight="32.0" prefWidth="46.0" text="Высота" textAlignment="CENTER" />
+         <TextField fx:id="heightInput" layoutX="379.0" layoutY="10.0" prefHeight="26.0" prefWidth="59.0" text="50" />
+         <Button mnemonicParsing="false" onAction="#CancelDraw" prefHeight="25.0" prefWidth="84.0" text="Отмена" />
+      </children>
+   </HBox>
+   <HBox prefHeight="284.0" prefWidth="639.0">
+      <children>
+         <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Открыть файл" />
+         <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Сохранить файл" />
+      </children>
+   </HBox>
+</VBox>
