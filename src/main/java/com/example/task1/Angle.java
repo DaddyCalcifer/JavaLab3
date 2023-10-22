@@ -38,4 +38,10 @@ public class Angle extends Shape {
     public String toString() {
         return "Цвет угла: " + super.color;
     }
+
+    @Override
+    public String toSaveFormat(){
+        return ("angle "+ color.toString() + " " + x + " " + y + " " + w + " " + h);
+    }
+
 }

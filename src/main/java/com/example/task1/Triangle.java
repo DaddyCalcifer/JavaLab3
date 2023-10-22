@@ -38,4 +38,8 @@ public class Triangle extends Shape{
     public String toString() {
         return "Цвет треугольника: " + super.color +  ", а площадь: " + area();
     }
+    @Override
+    public String toSaveFormat(){
+        return ("triangle " + color.toString() + " " + outline.toString() + " " + x + " " + y + " " + w + " " + h);
+    }
 }

@@ -33,6 +33,10 @@ public class Ellipse extends Shape
         float res = (float)(3.14 * w * h) / 4;
         return res;
     }
+    @Override
+    public String toSaveFormat(){
+        return ("ellipse " + color.toString() + " " + outline.toString() + " " + x + " " + y + " " + w + " " + h);
+    }
 
     @Override
     void draw(GraphicsContext gr) {

@@ -28,12 +28,10 @@ public class Rectangle extends Shape
     {
         gc.setFill(color);
         gc.fillRect(x,y,w,h);
-        if(outline_size != 0)
-        {
-            gc.setStroke(outline);
-            gc.setLineWidth(outline_size);
-            gc.strokeRect(x,y,w,h);
-        }
+
+        gc.setStroke(outline);
+        gc.setLineWidth(outline_size);
+        gc.strokeRect(x,y,w,h);
     }
 
     @Override
@@ -45,5 +43,9 @@ public class Rectangle extends Shape
     @Override
     public String toString() {
         return "Цвет прямоугольника: " + super.color +  ", а площадь: " + area();
+    }
+    @Override
+    public String toSaveFormat(){
+        return ("rectangle " + color.toString() + " " + outline.toString() + " " + x + " " + y + " " + w + " " + h);
     }
 }

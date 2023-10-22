@@ -34,4 +34,8 @@ public class LineShape extends Shape{
     public String toString() {
         return "Цвет линии: " + super.color;
     }
+    @Override
+    public String toSaveFormat(){
+        return ("line " + color.toString() + " " + x + " " + y + " " + w);
+    }
 }

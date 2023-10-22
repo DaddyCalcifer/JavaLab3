@@ -58,13 +58,31 @@ public class HelloController {
     protected void CancelDraw()
     {
         figures.pollLast();
+        DrawQueueFig();
+    }
+    void DrawQueueFig()
+    {
         GraphicsContext gc = canvas.getGraphicsContext2D();
         gc.clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
         for (Shape sh:
-             figures) {
+                figures) {
             sh.draw(gc);
         }
     }
-
+    @FXML
+    protected void SaveFile()
+    {
+        FileManager.SaveFigures(figures.stream().toList());
+    }
+    @FXML
+    protected void OpenFile()
+    {
+        Deque<Shape> deq = FileManager.ReadFigures("save.txt");
+        for (Shape fig:
+             deq) {
+            figures.add(fig);
+        }
+        DrawQueueFig();
+    }
 
 }
